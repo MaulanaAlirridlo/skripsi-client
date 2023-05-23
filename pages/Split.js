@@ -59,9 +59,9 @@ export default function Split() {
       xTestA: JSON.stringify(data.xTestA[index]),
       xTestB: JSON.stringify(data.xTestB[index]),
       xTestC: JSON.stringify(data.xTestC[index]),
-      yTestA: JSON.stringify(data.yTestA[index]),
-      yTestB: JSON.stringify(data.yTestB[index]),
-      yTestC: JSON.stringify(data.yTestC[index]),
+      yTestA: cek(JSON.stringify(data.yTestA[index])),
+      yTestB: cek(JSON.stringify(data.yTestB[index])),
+      yTestC: cek(JSON.stringify(data.yTestC[index])),
     })))
   }
 
@@ -69,73 +69,88 @@ export default function Split() {
     {
       name: 'No',
       cell: (row, index) => index + 1,
+      width: '50px',
     },
     {
       name: 'Tweet Bersih',
       selector: 'tweetTrainA',
+      cell: row => <div>{row.tweetTrainA}</div>,
     },
     {
       name: 'Pembobotan',
       selector: 'xTrainA',
+      cell: row => <div style={{ width: `${row.xTrainA.length * 10}px` }}>{row.xTrainA}</div>,
     },
     {
-      name: 'class',
+      name: 'Class',
       selector: 'yTrainA',
+      width: '200px',
     }
   ]
   const TestAColumns = [
     {
       name: 'No',
       cell: (row, index) => index + 1,
+      width: '50px',
     },
     {
       name: 'Tweet Bersih',
       selector: 'tweetTestA',
+      cell: row => <div>{row.tweetTestA}</div>,
     },
     {
       name: 'Pembobotan',
       selector: 'xTestA',
+      cell: row => <div style={{ width: `${row.xTestA.length * 10}px` }}>{row.xTestA}</div>,
     },
     {
-      name: 'class',
+      name: 'Class',
       selector: 'yTestA',
-    }
+      width: '200px',   }
   ]
 
   const TrainBColumns = [
     {
       name: 'No',
       cell: (row, index) => index + 1,
+      width: '50px',
     },
     {
       name: 'Tweet Bersih',
       selector: 'tweetTrainB',
+      cell: row => <div>{row.tweetTrainB}</div>,
     },
     {
       name: 'Pembobotan',
       selector: 'xTrainB',
+      cell: row => <div style={{ width: `${row.xTrainB.length * 10}px` }}>{row.xTrainB}</div>,
     },
     {
-      name: 'class',
+      name: 'Class',
       selector: 'yTrainB',
+      width: '200px',
     }
   ]
   const TestBColumns = [
     {
       name: 'No',
       cell: (row, index) => index + 1,
+      width: '50px',
     },
     {
       name: 'Tweet Bersih',
       selector: 'tweetTestB',
+      cell: row => <div>{row.tweetTestB}</div>,
     },
     {
       name: 'Pembobotan',
       selector: 'xTestB',
+      cell: row => <div style={{ width: `${row.xTestB.length * 10}px` }}>{row.xTestB}</div>,
     },
     {
       name: 'Class',
       selector: 'yTestB',
+      width: '200px',
     }
   ]
 
@@ -143,36 +158,44 @@ export default function Split() {
     {
       name: 'No',
       cell: (row, index) => index + 1,
+      width: '50px',
     },
     {
       name: 'Tweet Bersih',
       selector: 'tweetTrainC',
+      cell: row => <div>{row.tweetTrainC}</div>,
     },
     {
       name: 'Pembobotan',
       selector: 'xTrainC',
+      cell: row => <div style={{ width: `${row.xTrainC.length * 10}px` }}>{row.xTrainC}</div>,
     },
     {
       name: 'Class',
       selector: 'yTrainC',
+      width: '200px',
     }
   ]
   const TestCColumns = [
     {
       name: 'No',
       cell: (row, index) => index + 1,
+      width: '50px',
     },
     {
       name: 'Tweet Bersih',
       selector: 'tweetTestC',
+      cell: row => <div>{row.tweetTestC}</div>,
     },
     {
       name: 'Pembobotan',
       selector: 'xTestC',
+      cell: row => <div style={{ width: `${row.xTestC.length * 10}px` }}>{row.xTestC}</div>,
     },
     {
       name: 'Class',
       selector: 'yTestC',
+      width: '200px',
     }
   ]
 

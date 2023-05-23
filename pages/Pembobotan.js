@@ -38,14 +38,17 @@ export default function Pembobotan() {
     {
       name: 'No',
       cell: (row, index) => index + 1,
+      width: '50px',
     },
     {
       name: 'Tweet Bersih',
       selector: 'cleanTweet',
+      cell: row => <div style={{ width: `${row.cleanTweet.length * 10}px` }}>{row.cleanTweet}</div>,
     },
     {
       name: 'Lexicon Based Features',
       selector: 'lbf',
+      width: '200px',
     }
   ]
 
@@ -53,14 +56,17 @@ export default function Pembobotan() {
     {
       name: 'No',
       cell: (row, index) => index + 1,
+      width: '50px',
     },
     {
       name: 'Tweet',
       selector: 'tweet',
+      cell: row => <div style={{ width: `${row.tweet.length * 10}px` }}>{row.tweet}</div>,
     },
     {
       name: 'Ensemble Features',
       selector: 'ef',
+      cell: row => <div style={{ width: `${row.ef.length * 10}px` }}>{row.ef}</div>,
     }
   ]
 
@@ -68,14 +74,17 @@ export default function Pembobotan() {
     {
       name: 'No',
       cell: (row, index) => index + 1,
+      width: '50px',
     },
     {
       name: 'Tweet Bersih',
       selector: 'cleanTweet',
+      cell: row => <div style={{ width: `${row.cleanTweet.length * 10}px` }}>{row.cleanTweet}</div>,
     },
     {
       name: 'Bag of Words',
       selector: 'bow',
+      cell: row => <div style={{ width: `${row.bow.length * 10}px` }}>{row.bow}</div>,
     }
   ]
 

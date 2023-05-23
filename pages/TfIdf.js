@@ -36,54 +36,19 @@ export default function TfIdf() {
     {
       name: 'No',
       cell: (row, index) => index + 1,
-      minWidth: '50px',
+      width: '50px',
     },
     {
       name: 'Tweet Bersih',
       selector: 'cleanTweet',
-      minWidth: '50px',
+      cell: row => <div>{row.cleanTweet}</div>,
     },
     {
       name: 'TF-IDF',
       selector: 'tfIdf',
-      minWidth: '50px',
+      cell: row => <div style={{ width: `${row.tfIdf.length * 10}px` }}>{row.tfIdf}</div>,
     }
   ]
-
-  const customStyles = {
-    headRow: {
-      display: 'flex',
-      flexDirection: 'row',
-      borderBottomWidth: '1px',
-      borderBottomStyle: 'solid',
-      borderBottomColor: '#ddd',
-    },
-    headCell: {
-      flexGrow: 1,
-      flexShrink: 1,
-      flexBasis: 'none',
-      padding: '10px',
-      textAlign: 'center',
-    },
-    cells: {
-      display: 'flex',
-      flexDirection: 'row',
-      alignItems: 'center',
-      borderBottomWidth: '1px',
-      borderBottomStyle: 'solid',
-      borderBottomColor: '#ddd',
-    },
-    cell: {
-      flexGrow: 1,
-      flexShrink: 1,
-      flexBasis: 'none',
-      padding: '10px',
-      fontSize: '64px',
-      whiteSpace: 'nowrap',
-      overflow: 'hidden',
-      textOverflow: 'ellipsis',
-    },
-  };
 
   return (
     <main className="flex min-h-screen flex-col m-auto px-24 pt-5 pb-10 bg-slate-50">
@@ -93,7 +58,6 @@ export default function TfIdf() {
       </div>
       <div className='mt-5 rounded-xl text-black shadow-md'>
         <DynamicDataTable
-          customStyles={customStyles}
           title={'TF-IDF'}
           columns={columns}
           data={mergedData}

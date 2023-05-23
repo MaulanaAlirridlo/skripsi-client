@@ -27,21 +27,26 @@ export default function Home() {
     {
       name: 'No',
       cell: (row, index) => index + 1,
+      width: '50px',
       // sortable: false,
     },
     {
       name: 'Username',
       selector: 'username',
+      width: '200px',
       // sortable: true,
     },
     {
       name: 'Tweet',
       selector: 'tweet',
+      // width: '1800px'
       // sortable: true,
+      cell: row => <div style={{ width: `100%` }}>{row.tweet}</div>,
     },
     {
       name: 'Created at',
       selector: 'created_at',
+      width: '200px',
       sortable: true,
     },
   ]

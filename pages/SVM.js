@@ -55,18 +55,22 @@ export default function Split() {
     {
       name: 'No',
       cell: (row, index) => index + 1,
+      width: '50px',
     },
     {
       name: 'Tweet Bersih',
       selector: 'tweetTestA',
+      cell: row => <div style={{ width: `${row.tweetTestA.length * 10}px` }}>{row.tweetTestA}</div>,
     },
     {
       name: 'Class',
       selector: 'yTestA',
+      cell: row => <div style={{ width: `${row.yTestA.length * 10}px` }}>{row.yTestA}</div>,
     },
     {
       name: 'Prediksi',
       selector: 'svmA',
+      cell: row => <div style={{ width: `${row.svmA.length * 10}px` }}>{row.svmA}</div>,
     },
   ]
 
@@ -74,18 +78,22 @@ export default function Split() {
     {
       name: 'No',
       cell: (row, index) => index + 1,
+      width: '50px',
     },
     {
       name: 'Tweet Bersih',
       selector: 'tweetTestB',
+      cell: row => <div style={{ width: `${row.tweetTestB.length * 10}px` }}>{row.tweetTestB}</div>,
     },
     {
       name: 'Class',
       selector: 'yTestB',
+      cell: row => <div style={{ width: `${row.yTestB.length * 10}px` }}>{row.yTestB}</div>,
     },
     {
       name: 'Prediksi',
       selector: 'svmB',
+      cell: row => <div style={{ width: `${row.svmB.length * 10}px` }}>{row.svmB}</div>,
     },
   ]
 
@@ -93,18 +101,22 @@ export default function Split() {
     {
       name: 'No',
       cell: (row, index) => index + 1,
+      width: '50px',
     },
     {
       name: 'Tweet Bersih',
       selector: 'tweetTestC',
+      cell: row => <div style={{ width: `${row.tweetTestC.length * 10}px` }}>{row.tweetTestC}</div>,
     },
     {
       name: 'Class',
       selector: 'yTestC',
+      cell: row => <div style={{ width: `${row.yTestC.length * 10}px` }}>{row.yTestC}</div>,
     },
     {
       name: 'Prediksi',
       selector: 'svmC',
+      cell: row => <div style={{ width: `${row.svmC.length * 10}px` }}>{row.svmC}</div>,
     },
   ]
 

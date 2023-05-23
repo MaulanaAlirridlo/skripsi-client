@@ -39,26 +39,32 @@ export default function Preprocessing() {
     {
       name: 'No',
       cell: (row, index) => index + 1,
+      width: '50px',
     },
     {
       name: 'Tweet',
       selector: 'tweet',
+      cell: row => <div style={{ width: `${row.tweet.length * 10}px` }}>{row.tweet}</div>,
     },
     {
       name: 'Case Folding',
       selector: 'caseFolding',
+      cell: row => <div style={{ width: `${row.caseFolding.length * 10}px` }}>{row.caseFolding}</div>,
     },
     {
       name: 'Data Cleaning',
       selector: 'dataCleaning',
+      cell: row => <div style={{ width: `${row.dataCleaning.length * 10}px` }}>{row.dataCleaning}</div>,
     },
     {
       name: 'Stopword Removal',
       selector: 'stopwordRemoval',
+      cell: row => <div style={{ width: `${row.stopwordRemoval.length * 10}px` }}>{row.stopwordRemoval}</div>,
     },
     {
       name: 'Stemming',
       selector: 'stemming',
+      cell: row => <div style={{ width: `${row.stopwordRemoval.length * 10}px` }}>{row.stopwordRemoval}</div>,
     },
   ]
 
