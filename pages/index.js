@@ -12,7 +12,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/all');
+        const response = await fetch(process.env.NEXT_PUBLIC_SERVER);
         const responseData = await response.json();
         setData(responseData);
       } catch (error) {
