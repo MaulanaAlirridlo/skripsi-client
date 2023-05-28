@@ -25,7 +25,6 @@ export default function Home() {
     fetchData();
   }, []);
 
-  console.log(process.env.NEXT_PUBLIC_SERVER)
   const columns = [
     {
       name: "No",
