@@ -78,7 +78,7 @@ export default function Preprocessing() {
           <Link href="/Pembobotan">Pembobotan 2</Link>
           <Link href="/Split">Split Data</Link>
           <Link href="/SVM">SVM</Link>
-          <Link href="/Kesipulan">Kesipulan</Link>
+          <Link href="/Kesimpulan">Kesipulan</Link>
         </div>
       </header>
 
