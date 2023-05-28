@@ -4,9 +4,10 @@ import Link from 'next/link';
 export default function Document() {
   return (
     <Html lang="en">
-      <Head />
-      <body>
+      <Head>
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+      </Head>
+      <body>
         <Main />
         <NextScript />
       </body>
