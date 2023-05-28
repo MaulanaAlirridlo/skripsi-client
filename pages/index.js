@@ -63,7 +63,7 @@ export default function Home() {
           <Link href="/Pembobotan">Pembobotan 2</Link>
           <Link href="/Split">Split Data</Link>
           <Link href="/SVM">SVM</Link>
-          <Link href="/Kesimpulan">Kesipulan</Link>
+          <Link href="/Kesimpulan">Kesimpulan</Link>
         </div>
       </header>
 
