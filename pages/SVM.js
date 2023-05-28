@@ -121,106 +121,123 @@ export default function Split() {
   ]
 
   return (
-    <main className="flex min-h-screen flex-col m-auto px-24 pt-5 pb-10 bg-slate-50">
-      <div className="bg-white w-2/3 rounded-xl text-black shadow-md p-5 flex">
-        <Image src="/logo-polije.png" alt='logo' width={1870} height={924} style={{width: '20%', height: 'auto'}}/>
-        <h2 className='w-fit items-center flex ml-5 text-4xl font-bold font-mono'>Support Vector Machine</h2>
-      </div>
-      <div className='mt-5 rounded-xl text-black shadow-md bg-white'>
-        <DynamicDataTable
-          title={'TF-IDF + Lexicon Based Features'}
-          columns={TestAColumns}
-          data={mergedData}
-          pagination={true}
-          responsive={true}
-          highlightOnHover={true}
-        />
-        <div className="px-5 pb-3">
-          <p>
-            Acuration : {data.accuracyA}
-          </p>
-          <p>
-            Precision : {data.precisionA}
-          </p>
-          <p>
-            Recall : {data.recallA}
-          </p>
-          <p>
-            F1-score : {data.f1A}
-          </p>
-          <p>
-            Waktu CPU : {data.cpuTimeA} detik
-          </p>
-          <p>
-            Waktu Proses : {data.allTimeA} detik
-          </p>
+    <div>
+      <header className="bg-slate-50">
+        <div className="justify-between bg-white shadow-lg text-black flex p-4 px-24 relative">
+          <Link href="/">Data Asli</Link>
+          <Link href="/Preprocessing">Preprocessing</Link>
+          <Link href="/TfIdf">Pembobotan 1</Link>
+          <Link href="/Pembobotan">Pembobotan 2</Link>
+          <Link href="/Split">Split Data</Link>
+          <Link href="/SVM">SVM</Link>
+          <Link href="/Kesipulan">Kesipulan</Link>
         </div>
-      </div>
-      <div className='mt-5 rounded-xl text-black shadow-md bg-white'>
-        <DynamicDataTable
-          title={'TF-IDF + Ensemble Features'}
-          columns={TestCColumns}
-          data={mergedData}
-          pagination={true}
-          responsive={true}
-          highlightOnHover={true}
-        />
-        <div className="px-5 pb-3">
-          <p>
-            Acuration : {data.accuracyC}
-          </p>
-          <p>
-            Precision : {data.precisionC}
-          </p>
-          <p>
-            Recall : {data.recallC}
-          </p>
-          <p>
-            F1-score : {data.f1C}
-          </p>
-          <p>
-            Waktu CPU : {data.cpuTimeC} detik
-          </p>
-          <p>
-            Waktu Proses : {data.allTimeC} detik
-          </p>
+      </header>
+
+      <main className="flex min-h-screen flex-col m-auto px-24 pt-5 pb-10 bg-slate-50">
+        <div className="bg-white w-2/3 rounded-xl text-black shadow-md p-5 flex">
+          <Image src="/logo-polije.png" alt='logo' width={1870} height={924} style={{width: '20%', height: 'auto'}}/>
+          <h2 className='w-fit items-center flex ml-5 text-4xl font-bold font-mono'>Support Vector Machine</h2>
         </div>
-      </div>
-      <div className='mt-5 rounded-xl text-black shadow-md bg-white'>
-        <DynamicDataTable
-          title={'TF-IDF + Bag of Words'}
-          columns={TestBColumns}
-          data={mergedData}
-          pagination={true}
-          responsive={true}
-          highlightOnHover={true}
-        />
-        <div className="px-5 pb-3">
-          <p>
-            Acuration : {data.accuracyB}
-          </p>
-          <p>
-            Precision : {data.precisionB}
-          </p>
-          <p>
-            Recall : {data.recallB}
-          </p>
-          <p>
-            F1-score : {data.f1B}
-          </p>
-          <p>
-            Waktu CPU : {data.cpuTimeB} detik
-          </p>
-          <p>
-            Waktu Proses : {data.allTimeB} detik
-          </p>
+        <div className='mt-5 rounded-xl text-black shadow-md bg-white'>
+          <DynamicDataTable
+            title={'TF-IDF + Lexicon Based Features'}
+            columns={TestAColumns}
+            data={mergedData}
+            pagination={true}
+            responsive={true}
+            highlightOnHover={true}
+          />
+          <div className="px-5 pb-3">
+            <p>
+              Acuration : {data.accuracyA}
+            </p>
+            <p>
+              Precision : {data.precisionA}
+            </p>
+            <p>
+              Recall : {data.recallA}
+            </p>
+            <p>
+              F1-score : {data.f1A}
+            </p>
+            <p>
+              Waktu CPU : {data.cpuTimeA} detik
+            </p>
+            <p>
+              Waktu Proses : {data.allTimeA} detik
+            </p>
+          </div>
         </div>
-      </div>
-      <div className='flex justify-end'>
-        <Link href="/Split" className='w-fit'>
-          <button className='text-black bg-white shadow-md px-5 py-2 rounded-xl mt-5 mr-3'>Sebelumnya</button>
-        </Link>
-      </div>
-    </main>
+        <div className='mt-5 rounded-xl text-black shadow-md bg-white'>
+          <DynamicDataTable
+            title={'TF-IDF + Ensemble Features'}
+            columns={TestCColumns}
+            data={mergedData}
+            pagination={true}
+            responsive={true}
+            highlightOnHover={true}
+          />
+          <div className="px-5 pb-3">
+            <p>
+              Acuration : {data.accuracyC}
+            </p>
+            <p>
+              Precision : {data.precisionC}
+            </p>
+            <p>
+              Recall : {data.recallC}
+            </p>
+            <p>
+              F1-score : {data.f1C}
+            </p>
+            <p>
+              Waktu CPU : {data.cpuTimeC} detik
+            </p>
+            <p>
+              Waktu Proses : {data.allTimeC} detik
+            </p>
+          </div>
+        </div>
+        <div className='mt-5 rounded-xl text-black shadow-md bg-white'>
+          <DynamicDataTable
+            title={'TF-IDF + Bag of Words'}
+            columns={TestBColumns}
+            data={mergedData}
+            pagination={true}
+            responsive={true}
+            highlightOnHover={true}
+          />
+          <div className="px-5 pb-3">
+            <p>
+              Acuration : {data.accuracyB}
+            </p>
+            <p>
+              Precision : {data.precisionB}
+            </p>
+            <p>
+              Recall : {data.recallB}
+            </p>
+            <p>
+              F1-score : {data.f1B}
+            </p>
+            <p>
+              Waktu CPU : {data.cpuTimeB} detik
+            </p>
+            <p>
+              Waktu Proses : {data.allTimeB} detik
+            </p>
+          </div>
+        </div>
+        <div className='flex justify-end'>
+          <Link href="/Split" className='w-fit'>
+            <button className='text-black bg-white shadow-md px-5 py-2 rounded-xl mt-5 mr-3'>Sebelumnya</button>
+          </Link>
+          <Link href="/Kesimpulan" className='w-fit'>
+            <button className='text-black bg-white shadow-md px-5 py-2 rounded-xl mt-5'>Selanjutnya</button>
+          </Link>
+        </div>
+      </main>
+    </div>
   )
 }

@@ -200,82 +200,96 @@ export default function Split() {
   ]
 
   return (
-    <main className="flex min-h-screen flex-col m-auto px-24 pt-5 pb-10 bg-slate-50">
-      <div className="bg-white w-1/2 rounded-xl text-black shadow-md p-5 flex">
-        <Image src="/logo-polije.png" alt='logo' width={1870} height={924} style={{width: '20%', height: 'auto'}}/>
-        <h2 className='w-fit items-center flex ml-5 text-4xl font-bold font-mono'>Membagi Data</h2>
-      </div>
-      <div className='mt-5 rounded-xl text-black shadow-md bg-white'>
-        <h3 className='w-fit items-center flex ml-4 text-3xl font-bold font-mono py-5'>
-          TF-IDF & Lexicon Based Features
-        </h3>
-        <DynamicDataTable
-          title={'Data Training'}
-          columns={TrainAColumns}
-          data={trainData}
-          pagination={true}
-          responsive={true}
-          highlightOnHover={true}
-        />
-        <DynamicDataTable
-          title={'Data Testing'}
-          columns={TestAColumns}
-          data={testData}
-          pagination={true}
-          responsive={true}
-          highlightOnHover={true}
-        />
-      </div>
-      <div className='mt-5 rounded-xl text-black shadow-md bg-white'>
-        <h3 className='w-fit items-center flex ml-4 text-3xl font-bold font-mono py-5'>
-          TF-IDF & Ensemble Features
-        </h3>
-        <DynamicDataTable
-          title={'Data Training'}
-          columns={TrainCColumns}
-          data={trainData}
-          pagination={true}
-          responsive={true}
-          highlightOnHover={true}
-        />
-        <DynamicDataTable
-          title={'Data Testing'}
-          columns={TestCColumns}
-          data={testData}
-          pagination={true}
-          responsive={true}
-          highlightOnHover={true}
-        />
-      </div>
-      <div className='mt-5 rounded-xl text-black shadow-md bg-white'>
-        <h3 className='w-fit items-center flex ml-4 text-3xl font-bold font-mono py-5'>
-          TF-IDF & Bag of Words
-        </h3>
-        <DynamicDataTable
-          title={'Data Training'}
-          columns={TrainBColumns}
-          data={trainData}
-          pagination={true}
-          responsive={true}
-          highlightOnHover={true}
-        />
-        <DynamicDataTable
-          title={'Data Testing'}
-          columns={TestBColumns}
-          data={testData}
-          pagination={true}
-          responsive={true}
-          highlightOnHover={true}
-        />
-      </div>
-      <div className='flex justify-end'>
-        <Link href="/Pembobotan" className='w-fit'>
-          <button className='text-black bg-white shadow-md px-5 py-2 rounded-xl mt-5 mr-3'>Sebelumnya</button>
-        </Link>
-        <Link href="/SVM" className='w-fit'>
-          <button className='text-black bg-white shadow-md px-5 py-2 rounded-xl mt-5'>Selanjutnya</button>
-        </Link>
-      </div>
-    </main>
+    <div>
+      <header className="bg-slate-50">
+        <div className="justify-between bg-white shadow-lg text-black flex p-4 px-24 relative">
+          <Link href="/">Data Asli</Link>
+          <Link href="/Preprocessing">Preprocessing</Link>
+          <Link href="/TfIdf">Pembobotan 1</Link>
+          <Link href="/Pembobotan">Pembobotan 2</Link>
+          <Link href="/Split">Split Data</Link>
+          <Link href="/SVM">SVM</Link>
+          <Link href="/Kesipulan">Kesipulan</Link>
+        </div>
+      </header>
+
+      <main className="flex min-h-screen flex-col m-auto px-24 pt-5 pb-10 bg-slate-50">
+        <div className="bg-white w-1/2 rounded-xl text-black shadow-md p-5 flex">
+          <Image src="/logo-polije.png" alt='logo' width={1870} height={924} style={{width: '20%', height: 'auto'}}/>
+          <h2 className='w-fit items-center flex ml-5 text-4xl font-bold font-mono'>Membagi Data</h2>
+        </div>
+        <div className='mt-5 rounded-xl text-black shadow-md bg-white'>
+          <h3 className='w-fit items-center flex ml-4 text-3xl font-bold font-mono py-5'>
+            TF-IDF & Lexicon Based Features
+          </h3>
+          <DynamicDataTable
+            title={'Data Training'}
+            columns={TrainAColumns}
+            data={trainData}
+            pagination={true}
+            responsive={true}
+            highlightOnHover={true}
+          />
+          <DynamicDataTable
+            title={'Data Testing'}
+            columns={TestAColumns}
+            data={testData}
+            pagination={true}
+            responsive={true}
+            highlightOnHover={true}
+          />
+        </div>
+        <div className='mt-5 rounded-xl text-black shadow-md bg-white'>
+          <h3 className='w-fit items-center flex ml-4 text-3xl font-bold font-mono py-5'>
+            TF-IDF & Ensemble Features
+          </h3>
+          <DynamicDataTable
+            title={'Data Training'}
+            columns={TrainCColumns}
+            data={trainData}
+            pagination={true}
+            responsive={true}
+            highlightOnHover={true}
+          />
+          <DynamicDataTable
+            title={'Data Testing'}
+            columns={TestCColumns}
+            data={testData}
+            pagination={true}
+            responsive={true}
+            highlightOnHover={true}
+          />
+        </div>
+        <div className='mt-5 rounded-xl text-black shadow-md bg-white'>
+          <h3 className='w-fit items-center flex ml-4 text-3xl font-bold font-mono py-5'>
+            TF-IDF & Bag of Words
+          </h3>
+          <DynamicDataTable
+            title={'Data Training'}
+            columns={TrainBColumns}
+            data={trainData}
+            pagination={true}
+            responsive={true}
+            highlightOnHover={true}
+          />
+          <DynamicDataTable
+            title={'Data Testing'}
+            columns={TestBColumns}
+            data={testData}
+            pagination={true}
+            responsive={true}
+            highlightOnHover={true}
+          />
+        </div>
+        <div className='flex justify-end'>
+          <Link href="/Pembobotan" className='w-fit'>
+            <button className='text-black bg-white shadow-md px-5 py-2 rounded-xl mt-5 mr-3'>Sebelumnya</button>
+          </Link>
+          <Link href="/SVM" className='w-fit'>
+            <button className='text-black bg-white shadow-md px-5 py-2 rounded-xl mt-5'>Selanjutnya</button>
+          </Link>
+        </div>
+      </main>
+    </div>
   )
 }
