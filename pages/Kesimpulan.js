@@ -4,7 +4,7 @@ import { useEffect, useContext, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
-export default function Split() {
+export default function Kesimpulan() {
   const { data, setData } = useContext(DataContext);
   const [mergedData, setMergedData] = useState([]);
 
