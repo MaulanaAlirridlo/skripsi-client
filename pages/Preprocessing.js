@@ -44,27 +44,27 @@ export default function Preprocessing() {
     {
       name: 'Tweet',
       selector: 'tweet',
-      cell: row => <div style={{ width: `${row.tweet.length * 10}px` }}>{row.tweet}</div>,
+      cell: (row) => <div style={{ width: `100%` }}>{row.tweet}</div>,
     },
     {
       name: 'Case Folding',
       selector: 'caseFolding',
-      cell: row => <div style={{ width: `${row.caseFolding.length * 10}px` }}>{row.caseFolding}</div>,
+      cell: (row) => <div style={{ width: `100%` }}>{row.caseFolding}</div>,
     },
     {
       name: 'Data Cleaning',
       selector: 'dataCleaning',
-      cell: row => <div style={{ width: `${row.dataCleaning.length * 10}px` }}>{row.dataCleaning}</div>,
+      cell: (row) => <div style={{ width: `100%` }}>{row.dataCleaning}</div>,
     },
     {
       name: 'Stopword Removal',
       selector: 'stopwordRemoval',
-      cell: row => <div style={{ width: `${row.stopwordRemoval.length * 10}px` }}>{row.stopwordRemoval}</div>,
+      cell: (row) => <div style={{ width: `100%` }}>{row.stopwordRemoval}</div>,
     },
     {
       name: 'Stemming',
       selector: 'stemming',
-      cell: row => <div style={{ width: `${row.stopwordRemoval.length * 10}px` }}>{row.stemming}</div>,
+      cell: (row) => <div style={{ width: `100%` }}>{row.stemming}</div>,
     },
   ]
 
@@ -74,10 +74,9 @@ export default function Preprocessing() {
         <div className="justify-between bg-white shadow-lg text-black flex p-4 px-24 relative">
           <Link href="/">Data Asli</Link>
           <Link href="/Preprocessing">Preprocessing</Link>
-          <Link href="/TfIdf">Pembobotan 1</Link>
-          <Link href="/Pembobotan">Pembobotan 2</Link>
-          <Link href="/Split">Split Data</Link>
-          <Link href="/SVM">SVM</Link>
+          <Link href="/TfIdf">TF-IDF</Link>
+          <Link href="/Pembobotan">Perbandingan</Link>
+          <Link href="/KFoldCS">K-Fold CS</Link>
           <Link href="/Kesimpulan">Kesimpulan</Link>
         </div>
       </header>

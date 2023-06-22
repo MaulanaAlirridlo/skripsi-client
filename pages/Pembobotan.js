@@ -30,10 +30,8 @@ export default function Pembobotan() {
       tweet: data.initData[index].tweet,
       lbf: JSON.stringify([data.pos[index], data.neg[index], data.neu[index]]),
       ef: JSON.stringify(data.ef[index]),
-      bow: JSON.stringify(data.bow[index]),
     })))
   }
-
   const lbfColumns = [
     {
       name: 'No',
@@ -43,7 +41,7 @@ export default function Pembobotan() {
     {
       name: 'Tweet Bersih',
       selector: 'cleanTweet',
-      cell: row => <div style={{ width: `${row.cleanTweet.length * 10}px` }}>{row.cleanTweet}</div>,
+      cell: (row) => <div style={{ width: `100%` }}>{row.cleanTweet}</div>,
     },
     {
       name: 'Lexicon Based Features',
@@ -61,30 +59,12 @@ export default function Pembobotan() {
     {
       name: 'Tweet',
       selector: 'tweet',
-      cell: row => <div style={{ width: `${row.tweet.length * 10}px` }}>{row.tweet}</div>,
+      cell: (row) => <div style={{ width: `100%` }}>{row.tweet}</div>,
     },
     {
       name: 'Ensemble Features',
       selector: 'ef',
-      cell: row => <div style={{ width: `${row.ef.length * 10}px` }}>{row.ef}</div>,
-    }
-  ]
-
-  const bowColumns = [
-    {
-      name: 'No',
-      cell: (row, index) => index + 1,
-      width: '50px',
-    },
-    {
-      name: 'Tweet Bersih',
-      selector: 'cleanTweet',
-      cell: row => <div style={{ width: `${row.cleanTweet.length * 10}px` }}>{row.cleanTweet}</div>,
-    },
-    {
-      name: 'Bag of Words',
-      selector: 'bow',
-      cell: row => <div style={{ width: `${row.bow.length * 10}px` }}>{row.bow}</div>,
+      cell: (row) => <div style={{ width: `100%` }}>{row.ef}</div>,
     }
   ]
 
@@ -94,10 +74,9 @@ export default function Pembobotan() {
         <div className="justify-between bg-white shadow-lg text-black flex p-4 px-24 relative">
           <Link href="/">Data Asli</Link>
           <Link href="/Preprocessing">Preprocessing</Link>
-          <Link href="/TfIdf">Pembobotan 1</Link>
-          <Link href="/Pembobotan">Pembobotan 2</Link>
-          <Link href="/Split">Split Data</Link>
-          <Link href="/SVM">SVM</Link>
+          <Link href="/TfIdf">TF-IDF</Link>
+          <Link href="/Pembobotan">Perbandingan</Link>
+          <Link href="/KFoldCS">K-Fold CS</Link>
           <Link href="/Kesimpulan">Kesimpulan</Link>
         </div>
       </header>
@@ -121,16 +100,6 @@ export default function Pembobotan() {
           <DynamicDataTable
             title={'Ensemble Features'}
             columns={efColumns}
-            data={mergedData}
-            pagination={true}
-            responsive={true}
-            highlightOnHover={true}
-          />
-        </div>
-        <div className='mt-5 rounded-xl text-black shadow-md'>
-          <DynamicDataTable
-            title={'Bag of Words'}
-            columns={bowColumns}
             data={mergedData}
             pagination={true}
             responsive={true}

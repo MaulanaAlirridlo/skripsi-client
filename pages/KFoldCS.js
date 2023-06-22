@@ -6,10 +6,9 @@ import Link from 'next/link';
 
 const DynamicDataTable = dynamic(() => import('react-data-table-component'), { ssr: false })
 
-export default function TfIdf() {
+export default function KFoldCS() {
   const {data, setData} = useContext(DataContext)
   const [mergedData, setMergedData] = useState([])
-  const [extend, setExtend] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,30 +24,37 @@ export default function TfIdf() {
     fetchData();
   }, [])
 
-  if (data.cleanTweet && mergedData.length === 0) {
-    setMergedData(data.cleanTweet.map((item, index) => ({
-      cleanTweet: item,
-      tfIdf: JSON.stringify(data.tfIdf[index]),
-    })))
+  // a = tf-idf & lbf
+  // b = tf-idf & bow
+  // c = tf-idf & ef
+  if (data.scoresA && mergedData.length === 0) {
+    setMergedData(data.scoresA.map((item, index) => ({
+      no: index+1,
+      scoresA: item,
+      scoresC: data.scoresC[index],
+    })).concat({
+      no: "rata-rata",
+      scoresA: data.mean_scoreA,
+      scoresC: data.mean_scoreC,
+    }))
   }
-  console.log(mergedData)
 
-  const columns = [
+  const TestAColumns = [
     {
       name: 'No',
-      cell: (row, index) => index + 1,
-      width: '50px',
+      selector: 'no',
+      width: '100px',
     },
     {
-      name: 'Tweet Bersih',
-      selector: 'cleanTweet',
-      cell: (row) => <div style={{ width: `100%` }}>{row.cleanTweet}</div>,
+      name: 'Lexicon Based Features',
+      selector: 'scoresA',
+      cell: row => <div style={{ width: `${row.scoresA.length * 10}px` }}>{row.scoresA}</div>,
     },
     {
-      name: 'TF-IDF',
-      selector: 'tfIdf',
-      cell: (row) => <div style={{ width: `100%` }}>{extend ? row.tfIdf : row.tfIdf.slice(0, 97) + "..."}</div>,
-    }
+      name: 'Ensemble Features',
+      selector: 'scoresC',
+      cell: row => <div style={{ width: `${row.scoresC.length * 10}px` }}>{row.scoresC}</div>,
+    },
   ]
 
   return (
@@ -65,26 +71,25 @@ export default function TfIdf() {
       </header>
 
       <main className="flex min-h-screen flex-col m-auto px-24 pt-5 pb-10 bg-slate-50">
-        <div className="bg-white w-1/2 rounded-xl text-black shadow-md p-5 flex">
+        <div className="bg-white w-2/3 rounded-xl text-black shadow-md p-5 flex">
           <Image src="/logo-polije.png" alt='logo' width={1870} height={924} style={{width: '20%', height: 'auto'}}/>
-          <h2 className='w-fit items-center flex ml-5 text-4xl font-bold font-mono'>Pembobotan</h2>
+          <h2 className='w-fit items-center flex ml-5 text-4xl font-bold font-mono'>K-Fold Cross Validation</h2>
         </div>
-        <button onClick={() => extend ? setExtend(false) : setExtend(true)} className='text-black bg-white shadow-md px-5 py-2 rounded-xl mt-5 w-44'>Detail</button>
-        <div className='mt-5 rounded-xl text-black shadow-md'>
+        <div className='mt-5 rounded-xl text-black shadow-md bg-white'>
           <DynamicDataTable
-            title={'TF-IDF'}
-            columns={columns}
+            title={'Perbandingan Akurasi'}
+            columns={TestAColumns}
             data={mergedData}
-            pagination={true}
+            // pagination={true}
+            responsive={true}
             highlightOnHover={true}
-            responsive
           />
         </div>
-        <div className='flex justify-end'>
-          <Link href="/Preprocessing" className='w-fit'>
+        <div className='flex justify-end mt-5'>
+          <Link href="/Split" className='w-fit'>
             <button className='text-black bg-white shadow-md px-5 py-2 rounded-xl mt-5 mr-3'>Sebelumnya</button>
           </Link>
-          <Link href="/Pembobotan" className='w-fit'>
+          <Link href="/Kesimpulan" className='w-fit'>
             <button className='text-black bg-white shadow-md px-5 py-2 rounded-xl mt-5'>Selanjutnya</button>
           </Link>
         </div>

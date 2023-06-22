@@ -25,6 +25,16 @@ export default function Home() {
     fetchData();
   }, []);
 
+  function cek(kelas) { 
+    if (kelas == 0) {
+      return 'negatif'
+    } else if (kelas == 1) {
+      return 'positif'
+    } else {
+      return 'netral'
+    }
+  }
+
   const columns = [
     {
       name: "No",
@@ -59,10 +69,9 @@ export default function Home() {
         <div className="justify-between bg-white shadow-lg text-black flex p-4 px-24 relative">
           <Link href="/">Data Asli</Link>
           <Link href="/Preprocessing">Preprocessing</Link>
-          <Link href="/TfIdf">Pembobotan 1</Link>
-          <Link href="/Pembobotan">Pembobotan 2</Link>
-          <Link href="/Split">Split Data</Link>
-          <Link href="/SVM">SVM</Link>
+          <Link href="/TfIdf">TF-IDF</Link>
+          <Link href="/Pembobotan">Perbandingan</Link>
+          <Link href="/KFoldCS">K-Fold CS</Link>
           <Link href="/Kesimpulan">Kesimpulan</Link>
         </div>
       </header>
